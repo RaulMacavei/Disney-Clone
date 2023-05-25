@@ -1,16 +1,17 @@
 import "./App.css";
-import Brands from "./components/Brands";
-import GenreMovieList from "./components/GenreMovieList";
-import Header from "./components/Header";
-import Slider from "./components/Slider";
+import Hero from "./components/Hero";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="">
-      <Header />
-      <Slider />
-      <Brands />
-      <GenreMovieList />
+      <Router>
+        <Routes>
+          <Route index element={<Hero />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
